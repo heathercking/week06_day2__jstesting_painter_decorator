@@ -4,4 +4,11 @@ const Paint = function(colour, litres, empty=false) {
     this.empty = empty;
 };
 
-module.exports = Paint
+Paint.prototype.emptyPaint = function(quantity) {
+    this.litres -= quantity;
+    if (this.litres === 0) {
+        this.empty = true;
+    };
+}
+
+module.exports = Paint;
